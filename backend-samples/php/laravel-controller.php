@@ -31,4 +31,15 @@ The blade template.
 <span class='video-editable' data-emptytext='Click to add YouTube Video' data-type='text' data-url='{{ route('serie/quick_update', $serie->id) }}' data-pk="{{ $serie->id }}" data-name='video'>
     {{ nl2br($serie->video) }}
 </span>
+
+VERY IMPORTANT :
+    Laravel 5x need the token for it's request, so you have to add csrf_token to header :
+    
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: { 'X-CSRF-TOKEN': '{!! csrf_token() !!}' }
+        }); 
+    </script>
+
+
 */
